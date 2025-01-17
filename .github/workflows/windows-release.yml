@@ -5,11 +5,11 @@ permissions:
 on:
   push:
     tags:
-      - '*'
-      - '!*-alpha*'
+      - "*"
+      - "!*-alpha*"
 jobs:
   release:
-    runs-on: self-hosted
+    runs-on: windows-latest
     defaults:
       run:
         shell: bash
@@ -32,7 +32,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
-          go-version: '>=1.18.0'
+          go-version: ">=1.18.0"
       - name: Build Backend
         run: |
           go mod download
